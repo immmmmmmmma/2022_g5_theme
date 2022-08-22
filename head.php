@@ -202,6 +202,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         });
     });
 
+    
+
     </script>
 </div>
 <!-- } 상단 끝 -->
