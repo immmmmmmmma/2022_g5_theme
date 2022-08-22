@@ -190,6 +190,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             </div>
             <div id="gnb_all_bg"></div>
         </div>
+        
     </nav>
     <script>
     
@@ -202,7 +203,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         });
     });
 
-    
+
 
     </script>
 </div>

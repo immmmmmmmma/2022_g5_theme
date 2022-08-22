@@ -18,24 +18,26 @@ include_once(G5_THEME_PATH.'/head.php');
 <h2 class="sound_only">최신글</h2>
 
 <?php
-echo G5_THEME_PATH;
-echo "<br>";
-echo G5_THEME_IMG_URL."<br>";
-echo G5_THEME_CSS_URL."<br>";
-echo G5_THEME_JS_URL."<br>";
+	// echo G5_THEME_PATH;
+	// echo "<br>";
+	// echo G5_THEME_IMG_URL."<br>";
+	// echo G5_THEME_CSS_URL."<br>";
+	// echo G5_THEME_JS_URL."<br>";
 ?>
-<img src="<?echo G5_THEME_IMG_URL?>/img/img1.jpg" alt="">;
+<img src="<?echo G5_THEME_IMG_URL?>/img/img1.jpg" alt="">
 
-<div class="wrap slideWrap">
-	<ul class="slide">
-		<li><img src="<?echo G5_THEME_URL?>/img/img1.jpg" alt="">" alt=""></li>;
-		<li><img src="<?echo G5_THEME_URL?>/img/img2.jpg" alt="">" alt=""></li>;
-		<li><img src="<?echo G5_THEME_URL?>/img/img3.jpg" alt="">" alt=""></li>;
-		<li><img src="<?echo G5_THEME_URL?>/img/img4.jpg" alt="">" alt=""></li>;
-		<li><img src="<?echo G5_THEME_URL?>/img/img5.jpg" alt="">" alt=""></li>;
-		<li><img src="<?echo G5_THEME_URL?>/img/img6.jpg" alt="">" alt=""></li>;
-		<li><img src="<?echo G5_THEME_URL?>/img/img6.jpg" alt="">" alt=""></li>;
-	</ul>
+<div class="visualWrap">
+	<div class="wrap slideWrap">
+		<ul class="slide">
+			<li><img src="<?echo G5_THEME_URL?>/img/img1.jpg" alt=""></li>;
+			<li><img src="<?echo G5_THEME_URL?>/img/img2.jpg" alt=""></li>;
+			<li><img src="<?echo G5_THEME_URL?>/img/img3.jpg" alt=""></li>;
+			<li><img src="<?echo G5_THEME_URL?>/img/img4.jpg" alt=""></li>;
+			<li><img src="<?echo G5_THEME_URL?>/img/img5.jpg" alt=""></li>;
+			<li><img src="<?echo G5_THEME_URL?>/img/img6.jpg" alt=""></li>;
+			<li><img src="<?echo G5_THEME_URL?>/img/img6.jpg" alt=""></li>;
+		</ul>
+	</div>
 </div>
 
 
