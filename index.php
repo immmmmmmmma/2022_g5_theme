@@ -15,35 +15,34 @@ if(G5_COMMUNITY_USE === false) {
 include_once(G5_THEME_PATH.'/head.php');
 ?>
 
-<h2 class="sound_only">최신글</h2>
 
-<?php
-	// echo G5_THEME_PATH;
-	// echo "<br>";
-	// echo G5_THEME_IMG_URL."<br>";
-	// echo G5_THEME_CSS_URL."<br>";
-	// echo G5_THEME_JS_URL."<br>";
-?>
-<img src="<?echo G5_THEME_IMG_URL?>/img/img1.jpg" alt="">
+<div id="g5">
+	<?php
+		echo G5_THEME_PATH;
+		echo "<br>";
+		echo G5_THEME_IMG_URL."<BR>";
+		echo G5_THEME_CSS_URL."<BR>";
+		echo G5_THEME_JS_URL."<BR>";
+		echo G5_BBS_URL."<BR>";
+	?>
+</div>
 
-<div class="visualWrap">
-	<div class="wrap slideWrap">
-		<ul class="slide">
-			<li><img src="<?echo G5_THEME_URL?>/img/img1.jpg" alt=""></li>;
-			<li><img src="<?echo G5_THEME_URL?>/img/img2.jpg" alt=""></li>;
-			<li><img src="<?echo G5_THEME_URL?>/img/img3.jpg" alt=""></li>;
-			<li><img src="<?echo G5_THEME_URL?>/img/img4.jpg" alt=""></li>;
-			<li><img src="<?echo G5_THEME_URL?>/img/img5.jpg" alt=""></li>;
-			<li><img src="<?echo G5_THEME_URL?>/img/img6.jpg" alt=""></li>;
-			<li><img src="<?echo G5_THEME_URL?>/img/img6.jpg" alt=""></li>;
-		</ul>
+<div class="bannerWrap">
+	<div class="banner">
+		<div class="txtWrap">
+			<h2>
+				금융을 시작으로
+				일상에 도움이 되는 선한 서비스
+			</h2>
+			<p>
+				삼성생명, 삼성화재, 삼성카드, 삼성증권이 함께 만든
+				모니모는 오늘도 이 가치를 펼치고자 합니다
+			</p>
+		</div>
+		<img src="<?php echo G5_THEME_IMG_URL ?>/banner.png" alt="<?php echo $config['cf_title']; ?>">
 	</div>
 </div>
 
-
-<script>
-	$(".slide").bxSlider();
-</script>
 
 <?php
 include_once(G5_THEME_PATH.'/tail.php');
