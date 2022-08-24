@@ -16,6 +16,7 @@ include_once(G5_THEME_PATH.'/head.php');
 ?>
 
 
+
 <div id="g5">
 	<?php
 		echo G5_THEME_PATH;
@@ -39,9 +40,27 @@ include_once(G5_THEME_PATH.'/head.php');
 				모니모는 오늘도 이 가치를 펼치고자 합니다
 			</p>
 		</div>
-		<img src="<?php echo G5_THEME_IMG_URL ?>/banner.png" alt="<?php echo $config['cf_title']; ?>">
 	</div>
 </div>
+
+<div class="mslideWrap">
+	<ul class="mslide">
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms01.png" alt=""></li>
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms02.png" alt=""></li>
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms03.png" alt=""></li>
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms04.png" alt=""></li>
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms05.png" alt=""></li>
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms06.png" alt=""></li>
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms07.png" alt=""></li>
+		<li><img src="<? echo G5_THEME_IMG_URL ?>/ms08.png" alt=""></li>
+	</ul>
+</div>
+
+<script>
+	$(".mslide").bxSlider(function(){
+		
+	})
+</script>
 
 
 <?php
