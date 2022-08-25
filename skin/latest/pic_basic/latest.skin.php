@@ -4,8 +4,10 @@ include_once(G5_LIB_PATH.'/thumbnail.lib.php');
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 0);
+//이미지 크기 조절
 $thumb_width = 210;
 $thumb_height = 150;
+//
 ?>
 
 <div class="pic_lt">
@@ -13,6 +15,7 @@ $thumb_height = 150;
     <ul>
     <?php
     for ($i=0; $i<count($list); $i++) {
+        //최근 계시물에 img파일도 올라오게 하는 법
     $thumb = get_list_thumbnail($bo_table, $list[$i]['wr_id'], $thumb_width, $thumb_height, false, true);
 
     if($thumb['src']) {
@@ -22,9 +25,12 @@ $thumb_height = 150;
         $thumb['alt'] = '이미지가 없습니다.';
     }
     $img_content = '<img src="'.$img.'" alt="'.$thumb['alt'].'" >';
+        //
     ?>
         <li>
-            <a href="<?php echo $list[$i]['href'] ?>" class="lt_img"><?php echo $img_content; ?></a>
+            <a href="<?php echo $list[$i]['href'] ?>" class="lt_img">
+                <!-- <?php echo $img_content; ?>  이미지가 들어갈 공간-->
+            </a>    
             <?php
             if ($list[$i]['icon_secret']) echo "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i><span class=\"sound_only\">비밀글</span> ";
 

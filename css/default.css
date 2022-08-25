@@ -141,6 +141,8 @@ border:1px solid #558ab7 !important;
 #container {
   position:relative;min-height:500px;height:auto !important;
   font-size:1em;width:100%;zoom:1;padding:0 20px;
+  margin-right: auto;
+  --bs-gutter-x:0;
 }
 #container_title {font-size:1.333em;margin:0 auto;font-weight:bold;display: flex;justify-content: center;align-items: center;height: 80px;}
 #container_title span {margin:0 auto 10px;display:block;line-height:30px}
