@@ -30,7 +30,7 @@ include_once(G5_THEME_PATH.'/head.php');
 
 <div class="bannerWrap">
 	<div class="banner">
-		<div class="txtWrap">
+		<div class="mytxtWrap">
 			<h2>
 				금융을 시작으로
 				일상에 도움이 되는 선한 서비스

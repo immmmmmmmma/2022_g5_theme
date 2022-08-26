@@ -36,40 +36,41 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <div id="logo">
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_THEME_IMG_URL ?>/logo.svg" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
-    
+	
+		<nav id="gnb">
+			<h2>메인메뉴</h2>
+			<div class="gnb_wrap">
+				<ul id="gnb_1dul">
+					
+					<?php
+					$menu_datas = get_menu_db(0, true);
+					$gnb_zindex = 999; // gnb_1dli z-index 값 설정용
+					$i = 0;
+					foreach( $menu_datas as $row ){
+						if( empty($row) ) continue;
+						$add_class = (isset($row['sub']) && $row['sub']) ? 'gnb_al_li_plus' : '';
+					?>
+					<li class="gnb_1dli <?php echo $add_class; ?>" style="z-index:<?php echo $gnb_zindex--; ?>">
+						<a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
+						
+					</li>
+					<?php
+					$i++;
+					}   //end foreach $row
+
+					if ($i == 0) {  ?>
+						<li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
+					<?php } ?>
+				</ul>
+				
+				
+			</div>
+    	</nav>
         
         
     </div>
     
-    <nav id="gnb">
-        <h2>메인메뉴</h2>
-        <div class="gnb_wrap">
-            <ul id="gnb_1dul">
-                
-                <?php
-				$menu_datas = get_menu_db(0, true);
-				$gnb_zindex = 999; // gnb_1dli z-index 값 설정용
-                $i = 0;
-                foreach( $menu_datas as $row ){
-                    if( empty($row) ) continue;
-                    $add_class = (isset($row['sub']) && $row['sub']) ? 'gnb_al_li_plus' : '';
-                ?>
-                <li class="gnb_1dli <?php echo $add_class; ?>" style="z-index:<?php echo $gnb_zindex--; ?>">
-                    <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
-                    
-                </li>
-                <?php
-                $i++;
-                }   //end foreach $row
-
-                if ($i == 0) {  ?>
-                    <li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
-                <?php } ?>
-            </ul>
-            
-            
-        </div>
-    </nav>
+    
 
 </div>
 <!-- } 상단 끝 -->
@@ -77,15 +78,63 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 <hr>
 
+
+
 <!-- 콘텐츠 시작 { -->
 <div id="wrapper">
-    <div id="container_wr">
-   
-        <div id="container">
-            <?php if (!defined("_INDEX_")) { ?>
-            <h2 id="container_title">
-                <span title="<?php echo get_text($g5['title']); ?>">
-                <?php echo get_head_title($g5['title']); ?>
-                </span>
-            </h2>
-        <?php } ?>
+	
+	<?php if (!defined("_INDEX_")) { ?>
+		<style>
+			.visual{
+                height: 200px;
+				display: flex;
+                justify-content: center;
+                align-items: center;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+				color:white
+			}
+			.visual h2{font-size:2em}
+			.subTopBg_01{
+				background-image: url(<? echo G5_THEME_IMG_URL?>/bg01.jpg);
+			}
+			.subTopBg_02{background-image: url(<? echo G5_THEME_IMG_URL?>/bg02.jpg);}
+			.subTopBg_03{background-image: url(<? echo G5_THEME_IMG_URL?>/bg03.jpg);}
+			.subTopBg_04{background-image: url(<? echo G5_THEME_IMG_URL?>/bg01.jpg);}
+		</style>
+		<div class="visual" id="page_title">
+			<div class="txtWrap">
+				<h2 class="loc1D"></h2>
+				<p class="txt">항상 저희 홈페이지를 찾아주셔서 감사합니다</p>
+			</div>
+		</div>
+		<script>
+			window.onload = function(){
+				console.log("111"+$(".loc1D").html())
+				if($(".loc1D").html() == "소개"){
+					$(".txtWrap>.txt").html("왼쪽에 앉아있는 사람부터 소개 해볼까?")
+				}
+				if($(".loc1D").html() == "공지사항"){
+					$(".txtWrap>.txt").html("금일 점심 쏘야")
+				}
+			}
+		</script>
+		
+	<?}?>
+
+
+    <div id="container_wr"  <?php if (defined("_INDEX_")) { ?> style="width:100%" <?php } ?>>
+	
+    <div id="container">
+		
+        <?php if (!defined("_INDEX_")) { ?>
+			<h2 id="container_title">
+				<span title="<?php echo get_text($g5['title']); ?>">
+					<?php echo get_head_title($g5['title']); ?>
+				</span>
+			</h2>
+		<?php } ?>
+			
+		
